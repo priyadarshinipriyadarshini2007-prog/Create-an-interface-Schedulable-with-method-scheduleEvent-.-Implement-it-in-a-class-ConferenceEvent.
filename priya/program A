@@ -1,0 +1,38 @@
+class Event {
+    String eventName, venue;
+
+    Event(String eventName, String venue) {
+        this.eventName = eventName;
+        this.venue = venue;
+    }
+
+    void display() {
+        System.out.println("Event Name: " + eventName);
+        System.out.println("Venue: " + venue);
+    }
+}
+
+class WeddingEvent extends Event {
+    int guestCount;
+
+    WeddingEvent(String eventName, String venue, int guestCount) {
+        super(eventName, venue);
+        this.guestCount = guestCount;
+    }
+
+    @Override
+    void display() {
+        System.out.println("Event Name: " + eventName);
+        System.out.println("Venue: " + venue);
+        System.out.println("Guest Count: " + guestCount);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        WeddingEvent w =
+            new WeddingEvent("Priya's Wedding", "Chennai", 250);
+
+        w.display();
+    }
+}
