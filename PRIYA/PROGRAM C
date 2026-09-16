@@ -1,0 +1,16 @@
+class GuestList {
+    public static void main(String[] args) {
+
+        int guestCount = -5;
+
+        try {
+            String[] guests = new String[guestCount];
+
+            System.out.println("Guest list created successfully.");
+        }
+        catch (NegativeArraySizeException e) {
+            System.out.println("Error: Guest count cannot be negative.");
+            System.out.println("NegativeArraySizeException handled.");
+        }
+    }
+}
