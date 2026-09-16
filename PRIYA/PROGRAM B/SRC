@@ -1,0 +1,37 @@
+interface Schedulable {
+    void scheduleEvent();
+}
+
+class ConferenceEvent implements Schedulable {
+
+    private String eventName;
+    private String date;
+    private String location;
+
+    public ConferenceEvent(String eventName, String date, String location) {
+        this.eventName = eventName;
+        this.date = date;
+        this.location = location;
+    }
+
+    @Override
+    public void scheduleEvent() {
+        System.out.println("--- Conference Event Scheduled ---");
+        System.out.println("Event Name : " + eventName);
+        System.out.println("Date       : " + date);
+        System.out.println("Location   : " + location);
+        System.out.println("Status     : Confirmed");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Schedulable techConference = new ConferenceEvent(
+            "Tech Innovation Summit 2026",
+            "October 15, 2026",
+            "Auditorium A"
+        );
+
+        techConference.scheduleEvent();
+    }
+}
